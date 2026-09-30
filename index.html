@@ -1,1 +1,1609 @@
+<!DOCTYPE html>
+<html lang="es">
 
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Esto es para ti 💙</title>
+
+<style>
+
+/* =====================================
+   CONFIGURACIÓN GENERAL
+===================================== */
+
+*{
+    box-sizing:border-box;
+}
+
+html,body{
+    margin:0;
+    width:100%;
+    min-height:100%;
+}
+
+body{
+
+    font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+    background:
+    radial-gradient(circle at 20% 15%,
+    rgba(255,255,255,.8),
+    transparent 20%),
+
+    radial-gradient(circle at 80% 80%,
+    rgba(255,255,255,.5),
+    transparent 25%),
+
+    linear-gradient(
+    135deg,
+    #07152f,
+    #102b57,
+    #351b55,
+    #07152f
+    );
+
+    color:white;
+
+    overflow-x:hidden;
+}
+
+
+/* =====================================
+   FONDO
+===================================== */
+
+.fondo{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+}
+
+.luz{
+
+    position:absolute;
+
+    width:250px;
+
+    height:250px;
+
+    border-radius:50%;
+
+    background:
+    rgba(63,112,190,.18);
+
+    filter:blur(45px);
+
+    animation:
+    moverLuz 7s ease-in-out infinite alternate;
+
+}
+
+.luz.uno{
+
+    top:-80px;
+    left:-80px;
+
+}
+
+.luz.dos{
+
+    bottom:-100px;
+    right:-70px;
+
+    animation-delay:2s;
+
+}
+
+@keyframes moverLuz{
+
+    from{
+        transform:translate(0,0);
+    }
+
+    to{
+        transform:translate(70px,40px);
+    }
+
+}
+
+
+/* =====================================
+   ESTRELLITAS
+===================================== */
+
+.brillo{
+
+    position:absolute;
+
+    color:#ffffff;
+
+    font-size:20px;
+
+    animation:
+    brillar 2.5s ease-in-out infinite;
+
+}
+
+.b1{top:10%;left:10%;}
+.b2{top:18%;right:14%;}
+.b3{top:55%;left:5%;}
+.b4{bottom:12%;right:10%;}
+.b5{bottom:25%;left:15%;}
+
+@keyframes brillar{
+
+    0%,100%{
+        opacity:.25;
+        transform:scale(.7);
+    }
+
+    50%{
+        opacity:1;
+        transform:scale(1.25);
+    }
+
+}
+
+
+/* =====================================
+   PANTALLA INICIAL
+===================================== */
+
+.pantalla{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:50;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:25px;
+
+    text-align:center;
+
+    background:
+    linear-gradient(
+    135deg,
+    #07152f,
+    #122e5d,
+    #2c174c
+    );
+
+    transition:
+    opacity 1s ease,
+    visibility 1s ease;
+
+}
+
+.pantalla.oculta{
+
+    opacity:0;
+
+    visibility:hidden;
+
+    pointer-events:none;
+
+}
+
+.miniFlores{
+
+    font-size:32px;
+
+    margin-bottom:15px;
+
+}
+
+.pantalla h1{
+
+    margin:0;
+
+    font-size:
+    clamp(48px,14vw,85px);
+
+    color:#ffffff;
+
+    text-shadow:
+    0 0 15px rgba(94,153,255,.8),
+    0 5px 25px rgba(0,0,0,.4);
+
+}
+
+.pantalla p{
+
+    font-family:Arial,sans-serif;
+
+    color:#dbe8ff;
+
+    font-size:18px;
+
+    margin:10px 0 30px;
+
+}
+
+.botonAbrir{
+
+    border:2px solid rgba(255,255,255,.5);
+
+    background:
+    linear-gradient(
+    135deg,
+    #d71945,
+    #9f0f32
+    );
+
+    color:white;
+
+    padding:16px 30px;
+
+    border-radius:50px;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.35),
+    0 0 20px rgba(215,25,69,.35);
+
+    cursor:pointer;
+
+    animation:
+    pulsar 2s infinite;
+
+}
+
+@keyframes pulsar{
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.05);
+    }
+
+}
+
+
+/* =====================================
+   CONTENIDO
+===================================== */
+
+.contenido{
+
+    min-height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:
+    60px 15px;
+
+}
+
+.titulo{
+
+    text-align:center;
+
+    margin-bottom:25px;
+
+}
+
+.titulo .pequeno{
+
+    font-family:Arial,sans-serif;
+
+    color:#bcd4ff;
+
+    letter-spacing:4px;
+
+    text-transform:uppercase;
+
+    font-size:13px;
+
+}
+
+.titulo h2{
+
+    margin:7px 0;
+
+    font-size:
+    clamp(45px,12vw,75px);
+
+    color:white;
+
+    text-shadow:
+    0 0 20px rgba(96,151,255,.5);
+
+}
+
+.titulo .sub{
+
+    font-family:Arial,sans-serif;
+
+    color:#dbe5f5;
+
+    font-size:17px;
+
+}
+
+
+/* =====================================
+   EMPAQUE
+===================================== */
+
+.empaque{
+
+    position:relative;
+
+    width:min(360px,90vw);
+
+    height:510px;
+
+    perspective:1000px;
+
+    transition:
+    transform .8s ease;
+
+}
+
+.empaque.abierto{
+
+    transform:
+    scale(1.03)
+    translateY(-5px);
+
+}
+
+
+/* TARJETA ROJA */
+
+.tarjeta{
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    background:
+
+    radial-gradient(
+    circle at 50% 10%,
+    rgba(255,255,255,.25),
+    transparent 20%
+    ),
+
+    linear-gradient(
+    145deg,
+    #ee214d,
+    #bd1035 55%,
+    #790c29
+    );
+
+    box-shadow:
+    0 25px 60px rgba(0,0,0,.55);
+
+    border:
+    2px solid rgba(255,255,255,.35);
+
+}
+
+
+/* PARTE SUPERIOR DEL EMPAQUE */
+
+.marca{
+
+    text-align:center;
+
+    padding-top:20px;
+
+    font-family:Arial,sans-serif;
+
+    font-weight:900;
+
+    font-style:italic;
+
+    letter-spacing:1px;
+
+    font-size:30px;
+
+    color:white;
+
+    text-shadow:
+    2px 3px 0 #8d0925;
+
+}
+
+.edicion{
+
+    text-align:center;
+
+    font-family:Arial,sans-serif;
+
+    font-size:11px;
+
+    letter-spacing:3px;
+
+    margin-top:3px;
+
+    color:#ffdce4;
+
+}
+
+
+/* BANDA AZUL */
+
+.banda{
+
+    position:absolute;
+
+    left:-20px;
+
+    right:-20px;
+
+    top:95px;
+
+    height:42px;
+
+    transform:rotate(-4deg);
+
+    background:
+    linear-gradient(
+    90deg,
+    #071b40,
+    #123b77,
+    #071b40
+    );
+
+    box-shadow:
+    0 4px 8px rgba(0,0,0,.25);
+
+}
+
+.banda span{
+
+    display:block;
+
+    text-align:center;
+
+    line-height:42px;
+
+    font-family:Arial,sans-serif;
+
+    font-size:12px;
+
+    letter-spacing:4px;
+
+    font-weight:bold;
+
+    color:#eaf3ff;
+
+}
+
+
+/* =====================================
+   BLISTER TRANSPARENTE
+===================================== */
+
+.blister{
+
+    position:absolute;
+
+    left:28px;
+
+    right:28px;
+
+    top:145px;
+
+    height:235px;
+
+    border-radius:25px;
+
+    background:
+
+    linear-gradient(
+    135deg,
+    rgba(255,255,255,.28),
+    rgba(255,255,255,.07)
+    );
+
+    border:
+    2px solid rgba(255,255,255,.6);
+
+    box-shadow:
+    inset 0 0 25px rgba(255,255,255,.18),
+    0 10px 20px rgba(0,0,0,.25);
+
+    backdrop-filter:blur(2px);
+
+}
+
+
+/* REFLEJO DEL PLÁSTICO */
+
+.blister::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:60px;
+
+    height:180px;
+
+    left:30px;
+
+    top:20px;
+
+    background:
+    linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,.25),
+    transparent
+    );
+
+    transform:rotate(15deg);
+
+}
+
+
+/* =====================================
+   CARRO
+===================================== */
+
+.coche{
+
+    position:absolute;
+
+    width:215px;
+
+    height:100px;
+
+    left:50%;
+
+    top:67px;
+
+    transform:
+    translateX(-50%)
+    rotate(-3deg);
+
+    filter:
+    drop-shadow(
+    0 14px 8px rgba(0,0,0,.35)
+    );
+
+}
+
+
+/* CUERPO */
+
+.cocheCuerpo{
+
+    position:absolute;
+
+    bottom:20px;
+
+    left:10px;
+
+    width:195px;
+
+    height:47px;
+
+    border-radius:
+    30px 48px 14px 12px;
+
+    background:
+
+    linear-gradient(
+    180deg,
+    #ff436c,
+    #dc123e 50%,
+    #8f0b2a
+    );
+
+    box-shadow:
+    inset 0 5px 7px rgba(255,255,255,.4);
+
+}
+
+
+/* PARTE DELANTERA */
+
+.frente{
+
+    position:absolute;
+
+    right:-5px;
+
+    bottom:27px;
+
+    width:45px;
+
+    height:23px;
+
+    border-radius:
+    0 20px 5px 0;
+
+    background:
+    linear-gradient(
+    180deg,
+    #ff6685,
+    #c51038
+    );
+
+}
+
+
+/* CABINA */
+
+.cabina{
+
+    position:absolute;
+
+    left:58px;
+
+    top:5px;
+
+    width:95px;
+
+    height:48px;
+
+    background:
+    linear-gradient(
+    145deg,
+    #d81243,
+    #790b2a
+    );
+
+    clip-path:
+    polygon(
+    8% 100%,
+    23% 8%,
+    70% 0,
+    100% 100%
+    );
+
+}
+
+
+/* VIDRIO */
+
+.vidrio{
+
+    position:absolute;
+
+    left:70px;
+
+    top:12px;
+
+    width:70px;
+
+    height:30px;
+
+    background:
+    linear-gradient(
+    135deg,
+    #dff8ff,
+    #579ac2 65%,
+    #204c73
+    );
+
+    clip-path:
+    polygon(
+    12% 100%,
+    25% 0,
+    72% 0,
+    100% 100%
+    );
+
+    box-shadow:
+    inset 0 0 8px rgba(255,255,255,.8);
+
+}
+
+
+/* LÍNEA LATERAL */
+
+.lineaCoche{
+
+    position:absolute;
+
+    left:27px;
+
+    bottom:38px;
+
+    width:130px;
+
+    height:4px;
+
+    background:
+    linear-gradient(
+    90deg,
+    transparent,
+    #ffb3c2,
+    transparent
+    );
+
+    transform:skewX(-20deg);
+
+}
+
+
+/* RUEDAS */
+
+.rueda{
+
+    position:absolute;
+
+    bottom:0;
+
+    width:38px;
+
+    height:38px;
+
+    border-radius:50%;
+
+    background:#101114;
+
+    border:
+    6px solid #292b30;
+
+    box-shadow:
+    inset 0 0 0 3px #555;
+
+}
+
+.rueda::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:13px;
+
+    height:13px;
+
+    left:6px;
+
+    top:6px;
+
+    border-radius:50%;
+
+    background:
+    radial-gradient(
+    circle,
+    #e6e8eb 0 30%,
+    #777 31% 60%,
+    #444 61%
+    );
+
+}
+
+.rueda.izquierda{
+    left:35px;
+}
+
+.rueda.derecha{
+    right:30px;
+}
+
+
+/* FAROS */
+
+.faro{
+
+    position:absolute;
+
+    right:10px;
+
+    bottom:42px;
+
+    width:12px;
+
+    height:9px;
+
+    border-radius:5px;
+
+    background:#fff5bd;
+
+    box-shadow:
+    0 0 12px #fff3a1;
+
+}
+
+
+/* =====================================
+   PARTE INFERIOR DEL EMPAQUE
+===================================== */
+
+.nombreCarro{
+
+    position:absolute;
+
+    bottom:102px;
+
+    left:0;
+
+    width:100%;
+
+    text-align:center;
+
+    font-family:Arial,sans-serif;
+
+    color:white;
+
+    font-weight:bold;
+
+    letter-spacing:3px;
+
+    font-size:13px;
+
+}
+
+.numerito{
+
+    position:absolute;
+
+    bottom:55px;
+
+    left:25px;
+
+    width:42px;
+
+    height:42px;
+
+    border-radius:50%;
+
+    background:#071b40;
+
+    border:2px solid #d6e5ff;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-family:Arial,sans-serif;
+
+    font-weight:bold;
+
+}
+
+.serie{
+
+    position:absolute;
+
+    bottom:55px;
+
+    right:25px;
+
+    color:#ffd7df;
+
+    font-family:Arial,sans-serif;
+
+    font-size:11px;
+
+}
+
+
+/* =====================================
+   RAMO DE FLORES
+===================================== */
+
+.ramo{
+
+    position:absolute;
+
+    bottom:10px;
+
+    left:50%;
+
+    transform:
+    translateX(-50%)
+    translateY(40px)
+    scale(.7);
+
+    opacity:0;
+
+    transition:
+    1.2s ease;
+
+    width:240px;
+
+    height:190px;
+
+    z-index:10;
+
+}
+
+.ramo.mostrar{
+
+    opacity:1;
+
+    transform:
+    translateX(-50%)
+    translateY(0)
+    scale(1);
+
+}
+
+
+/* TALLOS */
+
+.tallo{
+
+    position:absolute;
+
+    width:4px;
+
+    height:100px;
+
+    background:#1f5b4c;
+
+    bottom:10px;
+
+    left:50%;
+
+    transform-origin:bottom;
+
+}
+
+.t1{transform:rotate(-30deg);}
+.t2{transform:rotate(-15deg);}
+.t3{transform:rotate(0deg);}
+.t4{transform:rotate(15deg);}
+.t5{transform:rotate(30deg);}
+
+
+/* FLORES AZUL MARINO */
+
+.florAzul{
+
+    position:absolute;
+
+    width:54px;
+
+    height:54px;
+
+    border-radius:50%;
+
+    background:
+    radial-gradient(
+    circle,
+    #f5d77b 0 12%,
+    transparent 13%
+    ),
+
+    radial-gradient(
+    circle at 50% 0%,
+    #123c78 0 30%,
+    transparent 31%
+    ),
+
+    radial-gradient(
+    circle at 100% 50%,
+    #123c78 0 30%,
+    transparent 31%
+    ),
+
+    radial-gradient(
+    circle at 50% 100%,
+    #123c78 0 30%,
+    transparent 31%
+    ),
+
+    radial-gradient(
+    circle at 0% 50%,
+    #123c78 0 30%,
+    transparent 31%
+    );
+
+    filter:
+    drop-shadow(
+    0 5px 5px rgba(0,0,0,.25)
+    );
+
+}
+
+.fA1{
+    left:18px;
+    top:35px;
+}
+
+.fA2{
+    left:72px;
+    top:10px;
+}
+
+.fA3{
+    left:100px;
+    top:58px;
+}
+
+.fA4{
+    right:28px;
+    top:25px;
+}
+
+.fA5{
+    right:8px;
+    top:75px;
+}
+
+
+/* HOJITAS */
+
+.hoja{
+
+    position:absolute;
+
+    width:38px;
+
+    height:17px;
+
+    border-radius:
+    100% 0 100% 0;
+
+    background:#1c6a50;
+
+}
+
+.h1{
+    left:40px;
+    bottom:25px;
+    transform:rotate(-35deg);
+}
+
+.h2{
+    right:40px;
+    bottom:35px;
+    transform:rotate(35deg);
+}
+
+
+/* =====================================
+   MENSAJE
+===================================== */
+
+.mensaje{
+
+    margin-top:35px;
+
+    text-align:center;
+
+    max-width:420px;
+
+    opacity:0;
+
+    transform:translateY(20px);
+
+    transition:
+    1s ease;
+
+}
+
+.mensaje.mostrar{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+.mensaje h3{
+
+    font-size:
+    clamp(32px,9vw,48px);
+
+    margin:0;
+
+    color:#ffffff;
+
+    text-shadow:
+    0 0 20px rgba(79,141,238,.7);
+
+}
+
+.mensaje p{
+
+    font-family:Arial,sans-serif;
+
+    font-size:17px;
+
+    line-height:1.6;
+
+    color:#dce9ff;
+
+}
+
+
+/* =====================================
+   BOTÓN FINAL
+===================================== */
+
+.boton{
+
+    margin-top:15px;
+
+    border:none;
+
+    border-radius:50px;
+
+    padding:14px 25px;
+
+    background:
+    linear-gradient(
+    135deg,
+    #143b78,
+    #0a234c
+    );
+
+    border:
+    1px solid rgba(255,255,255,.3);
+
+    color:white;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+    box-shadow:
+    0 8px 25px rgba(0,0,0,.3);
+
+}
+
+
+/* =====================================
+   CORAZONES QUE APARECEN
+===================================== */
+
+.corazon{
+
+    position:fixed;
+
+    bottom:-30px;
+
+    font-size:25px;
+
+    pointer-events:none;
+
+    animation:
+    subirCorazon 4s linear forwards;
+
+    z-index:100;
+
+}
+
+@keyframes subirCorazon{
+
+    0%{
+        opacity:0;
+        transform:
+        translateY(0)
+        scale(.5);
+    }
+
+    15%{
+        opacity:1;
+    }
+
+    100%{
+        opacity:0;
+        transform:
+        translateY(-100vh)
+        rotate(25deg)
+        scale(1.4);
+    }
+
+}
+
+
+/* =====================================
+   CELULARES
+===================================== */
+
+@media(max-width:450px){
+
+    .contenido{
+
+        padding-top:45px;
+
+    }
+
+    .empaque{
+
+        height:470px;
+
+        transform:scale(.9);
+
+    }
+
+    .titulo{
+
+        margin-bottom:5px;
+
+    }
+
+    .titulo h2{
+
+        margin:2px;
+
+    }
+
+    .mensaje{
+
+        margin-top:10px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================
+     FONDO
+===================================== -->
+
+<div class="fondo">
+
+    <div class="luz uno"></div>
+
+    <div class="luz dos"></div>
+
+    <div class="brillo b1">✦</div>
+    <div class="brillo b2">✧</div>
+    <div class="brillo b3">✦</div>
+    <div class="brillo b4">✧</div>
+    <div class="brillo b5">✦</div>
+
+</div>
+
+
+<!-- =====================================
+     PANTALLA INICIAL
+===================================== -->
+
+<section class="pantalla" id="inicio">
+
+    <div class="miniFlores">
+        💙 ✦ 💙
+    </div>
+
+    <h1>
+        Esto es para ti
+    </h1>
+
+    <p>
+        Tengo una pequeña sorpresa para ti...
+    </p>
+
+    <button
+    class="botonAbrir"
+    onclick="abrirRegalo()">
+
+        ✨ Abrir regalo ✨
+
+    </button>
+
+</section>
+
+
+
+<!-- =====================================
+     CONTENIDO PRINCIPAL
+===================================== -->
+
+<main class="contenido">
+
+
+    <div class="titulo">
+
+        <div class="pequeno">
+            Una pequeña sorpresa
+        </div>
+
+        <h2>
+            Para ti 💙
+        </h2>
+
+        <div class="sub">
+            Porque algunos detalles merecen llegar con flores.
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================
+         EMPAQUE
+    ================================== -->
+
+    <div
+    class="empaque"
+    id="empaque">
+
+
+        <div class="tarjeta">
+
+
+            <!-- NOMBRE DEL PRODUCTO -->
+
+            <div class="marca">
+                SPEED COLLECTION
+            </div>
+
+            <div class="edicion">
+                SPECIAL EDITION
+            </div>
+
+
+            <!-- BANDA AZUL -->
+
+            <div class="banda">
+
+                <span>
+                    COLLECT • DREAM • DRIVE
+                </span>
+
+            </div>
+
+
+            <!-- BLISTER -->
+
+            <div class="blister">
+
+
+                <!-- COCHE -->
+
+                <div class="coche">
+
+
+                    <div class="cabina"></div>
+
+                    <div class="vidrio"></div>
+
+                    <div class="cocheCuerpo">
+
+                        <div class="frente"></div>
+
+                        <div class="lineaCoche"></div>
+
+                        <div class="faro"></div>
+
+                    </div>
+
+
+                    <div class="rueda izquierda"></div>
+
+                    <div class="rueda derecha"></div>
+
+
+                </div>
+
+            </div>
+
+
+            <!-- DATOS -->
+
+            <div class="nombreCarro">
+                MIDNIGHT RIDER
+            </div>
+
+
+            <div class="numerito">
+                01
+            </div>
+
+
+            <div class="serie">
+                COLLECTOR EDITION
+            </div>
+
+
+            <!-- RAMO -->
+
+            <div
+            class="ramo"
+            id="ramo">
+
+
+                <div class="tallo t1"></div>
+                <div class="tallo t2"></div>
+                <div class="tallo t3"></div>
+                <div class="tallo t4"></div>
+                <div class="tallo t5"></div>
+
+
+                <div class="florAzul fA1"></div>
+                <div class="florAzul fA2"></div>
+                <div class="florAzul fA3"></div>
+                <div class="florAzul fA4"></div>
+                <div class="florAzul fA5"></div>
+
+
+                <div class="hoja h1"></div>
+                <div class="hoja h2"></div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================
+         MENSAJE
+    ================================== -->
+
+    <section
+    class="mensaje"
+    id="mensaje">
+
+        <h3>
+            Para ti 💙
+        </h3>
+
+        <p>
+            Que nunca te falten motivos para sonreír,
+            personas que te quieran y pequeños detalles
+            que hagan bonito tu día. ✨
+        </p>
+
+        <button
+        class="boton"
+        onclick="corazones()">
+
+            💙 Un último detalle
+
+        </button>
+
+    </section>
+
+
+</main>
+
+
+
+<script>
+
+/* =====================================
+   ABRIR REGALO
+===================================== */
+
+function abrirRegalo(){
+
+    const inicio =
+    document.getElementById("inicio");
+
+    const ramo =
+    document.getElementById("ramo");
+
+    const mensaje =
+    document.getElementById("mensaje");
+
+    const empaque =
+    document.getElementById("empaque");
+
+
+    inicio.classList.add("oculta");
+
+
+    setTimeout(function(){
+
+        empaque.classList.add("abierto");
+
+        ramo.classList.add("mostrar");
+
+        mensaje.classList.add("mostrar");
+
+        corazones();
+
+    },700);
+
+}
+
+
+
+/* =====================================
+   CORAZONES
+===================================== */
+
+function corazones(){
+
+    const simbolos =
+    ["💙","✨","💙","✦","💙"];
+
+    for(
+        let i=0;
+        i<18;
+        i++
+    ){
+
+        setTimeout(function(){
+
+            const corazon =
+            document.createElement("div");
+
+            corazon.className =
+            "corazon";
+
+            corazon.innerText =
+            simbolos[
+            Math.floor(
+            Math.random() *
+            simbolos.length
+            )
+            ];
+
+            corazon.style.left =
+            Math.random()*100 +
+            "%";
+
+            corazon.style.animationDuration =
+            (3 + Math.random()*2) +
+            "s";
+
+            document.body.appendChild(
+            corazon
+            );
+
+
+            setTimeout(function(){
+
+                corazon.remove();
+
+            },5000);
+
+
+        },i*120);
+
+    }
+
+}
+
+</script>
+
+
+</body>
+
+  </html>
