@@ -12,8 +12,6 @@
             background: linear-gradient(180deg, #050b1f 0%, #001233 50%, #002b5c 100%);
             color: #fff;
         }
-
-        /* PANTALLA DE INICIO */
         .inicio {
             position: absolute;
             width: 100%;
@@ -39,8 +37,6 @@
             color: #87ceeb;
             text-shadow: 0 0 10px #fff;
         }
-
-        /* PANTALLA SORPRESA */
         .sorpresa {
             width: 100%;
             min-height: 100vh;
@@ -57,17 +53,15 @@
             font-size: 26px;
             color: #ffd700;
             text-shadow: 0 0 12px #ffd700;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             text-align: center;
         }
-        .ramo {
-            text-align: center;
-            margin-bottom: 35px;
-        }
-        .ramo img {
-            width: 320px;
-            border-radius: 24px;
-            box-shadow: 0 0 25px rgba(100,200,255,0.4);
+        .foto-ramo {
+            width: 90%;
+            max-width: 350px;
+            border-radius: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 0 25px rgba(0,191,255,0.4);
         }
         .carta {
             background: rgba(255,255,255,0.08);
@@ -75,7 +69,6 @@
             border-radius: 20px;
             padding: 25px;
             max-width: 360px;
-            backdrop-filter: blur(8px);
         }
         .mensaje {
             font-size: 18px;
@@ -94,19 +87,16 @@
 </head>
 <body>
 
-    <!-- PANTALLA 1: INICIO -->
     <div class="inicio" id="inicio" onclick="abrir()">
-        <div class="logo">PARA TI🪼</div>
+        <div class="logo">HOT WHEELS</div>
         <p class="toca">💙 Toca para iniciar 💙</p>
     </div>
 
-    <!-- PANTALLA 2: SORPRESA -->
     <div class="sorpresa" id="sorpresa">
         <h1 class="titulo">✨ Un detalle para ti ✨</h1>
 
-        <div class="ramo">
-            <img src="https://pin.it/21FMo2IAw" alt="Ramo de flores azules con carros Hot Wheels">
-        </div>
+        <img src="https://raw.githubusercontent.com/angeleschiluisa2020-lab/Regalito-para-ti/main/9f0d5336fd0319245a56dc8605cdc2e7.jpg" 
+             alt="Ramo Hot Wheels" class="foto-ramo">
 
         <div class="carta">
             <p class="mensaje">
